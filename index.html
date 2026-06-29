@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Agriculture for Hilly Regions</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">🌿</span>
+        HillsAgro Smart Farm
+      </div>
+      <nav class="nav-links">
+        <a href="#dashboard">Dashboard</a>
+        <a href="#monitoring">Soil</a>
+        <a href="#weather">Weather</a>
+        <a href="#recommendation">Crops</a>
+      </nav>
+    </header>
+
+    <main class="main-grid">
+      <section class="hero-panel" id="dashboard">
+        <div>
+          <p class="eyebrow">Smart Agriculture for Hilly Regions</p>
+          <h1>Efficient cultivation with soil, weather, and irrigation intelligence.</h1>
+          <p>Monitor moisture, get crop recommendations, manage irrigation, and receive fertilizer suggestions tailored for slopes and highland farms.</p>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-card">
+            <h3>Active Sensors</h3>
+            <p id="sensor-count">12</p>
+          </div>
+          <div class="stat-card">
+            <h3>Fields Covered</h3>
+            <p id="field-count">5</p>
+          </div>
+          <div class="stat-card">
+            <h3>Water Savings</h3>
+            <p id="water-savings">28%</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel soil-panel" id="monitoring">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Soil Moisture Monitoring</p>
+            <h2>Live field moisture status</h2>
+          </div>
+          <button id="refresh-soil" class="button button-secondary">Refresh Data</button>
+        </div>
+        <div class="soil-grid" id="soil-list"></div>
+      </section>
+
+      <section class="panel weather-panel" id="weather">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Weather Information</p>
+            <h2>Local hill climate snapshot</h2>
+          </div>
+        </div>
+        <div class="weather-card">
+          <div>
+            <span class="weather-icon">☀️</span>
+            <div>
+              <h3 id="weather-condition">Sunny</h3>
+              <p id="weather-location">Northeastern Hills</p>
+            </div>
+          </div>
+          <div class="weather-details">
+            <div>
+              <strong id="weather-temp">22°C</strong>
+              <span>Temperature</span>
+            </div>
+            <div>
+              <strong id="weather-humidity">62%</strong>
+              <span>Humidity</span>
+            </div>
+            <div>
+              <strong id="weather-wind">12 km/h</strong>
+              <span>Wind</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel crop-panel" id="recommendation">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Crop Recommendation</p>
+            <h2>Choose the best crop for your land</h2>
+          </div>
+        </div>
+        <div class="crop-controls">
+          <label>
+            Select slope type
+            <select id="slope-select">
+              <option value="gentle">Gentle slope</option>
+              <option value="moderate">Moderate slope</option>
+              <option value="steep">Steep terrace</option>
+            </select>
+          </label>
+          <label>
+            Select soil type
+            <select id="soil-select">
+              <option value="loamy">Loamy</option>
+              <option value="clay">Clay</option>
+              <option value="sandy">Sandy</option>
+            </select>
+          </label>
+          <label>
+            Select crop
+            <select id="crop-select">
+              <option value="cardamom">Cardamom</option>
+              <option value="potato">Potato</option>
+              <option value="tea">Tea</option>
+              <option value="apple">Apple</option>
+            </select>
+          </label>
+        </div>
+        <div class="recommendation-grid">
+          <div class="recommendation-card">
+            <h3>Best Crop</h3>
+            <p id="recommended-crop">Tea</p>
+          </div>
+          <div class="recommendation-card">
+            <h3>Expected Yield</h3>
+            <p id="expected-yield">4.2 t/ha</p>
+          </div>
+          <div class="recommendation-card">
+            <h3>Harvest Window</h3>
+            <p id="harvest-window">14-18 weeks</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel irrigation-panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Irrigation Management</p>
+            <h2>Optimize water delivery for slopes</h2>
+          </div>
+          <button id="toggle-irrigation" class="button button-primary">Start Irrigation</button>
+        </div>
+        <div class="irrigation-card">
+          <div>
+            <p>Latest irrigation status</p>
+            <strong id="irrigation-status">Idle</strong>
+          </div>
+          <div>
+            <p>Next scheduled cycle</p>
+            <strong id="next-cycle">10:30 AM, Tomorrow</strong>
+          </div>
+          <div class="meter">
+            <span>Water usage</span>
+            <div class="meter-track"><div id="water-usage" class="meter-fill" style="width: 38%"></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel fertilizer-panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Fertilizer Suggestion</p>
+            <h2>Precision nutrition for hillside crops</h2>
+          </div>
+        </div>
+        <div class="fertilizer-grid">
+          <div class="fertilizer-card">
+            <h3>Nutrient Package</h3>
+            <p id="fertilizer-type">NPK 12-32-16</p>
+          </div>
+          <div class="fertilizer-card">
+            <h3>Application Rate</h3>
+            <p id="fertilizer-rate">180 kg/ha</p>
+          </div>
+          <div class="fertilizer-card">
+            <h3>pH Note</h3>
+            <p id="fertilizer-ph">6.1 - 6.8 ideal</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel challenges-panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Hilly Region Challenges</p>
+            <h2>Problems and practical solutions</h2>
+          </div>
+        </div>
+        <div class="challenge-list">
+          <article class="challenge-card">
+            <h3>Soil erosion</h3>
+            <p>Use contour farming, terracing and vegetative cover to reduce runoff on slopes.</p>
+          </article>
+          <article class="challenge-card">
+            <h3>Water loss</h3>
+            <p>Install drip irrigation, rainwater harvesting and moisture sensors for efficient delivery.</p>
+          </article>
+          <article class="challenge-card">
+            <h3>Cold microclimates</h3>
+            <p>Choose frost-tolerant crops and build windbreaks to protect young plants.</p>
+          </article>
+          <article class="challenge-card">
+            <h3>Crop selection</h3>
+            <p>Plant specialty highland crops like tea, apple, cardamom and potato with proper slope planning.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>HillsAgro Smart Farm · Responsive dashboard for hill cultivation.</p>
+    </footer>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

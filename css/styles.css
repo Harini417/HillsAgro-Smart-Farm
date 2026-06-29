@@ -1,0 +1,376 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f4f7fb;
+  color: #1e293b;
+  accent-color: #2f8d8d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: linear-gradient(180deg, #eef5fb 0%, #f9fbfd 100%);
+}
+
+button, select {
+  font: inherit;
+}
+
+.app-shell {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 3rem;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.brand-mark {
+  background: #2f8d8d20;
+  border-radius: 12px;
+  padding: 0.55rem;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.nav-links a {
+  color: #334155;
+  text-decoration: none;
+  padding: 0.6rem 0.85rem;
+  border-radius: 999px;
+  transition: background 0.2s ease;
+}
+
+.nav-links a:hover {
+  background: #e2e8f0;
+}
+
+.main-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.hero-panel,
+.panel {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  box-shadow: 0 20px 70px rgba(15, 23, 42, 0.05);
+  padding: 1.5rem;
+}
+
+.hero-panel {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.3rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  color: #4b5563;
+}
+
+.hero-panel h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.03;
+  color: #0f172a;
+}
+
+.hero-panel p {
+  margin-top: 1rem;
+  max-width: 36rem;
+  line-height: 1.7;
+  color: #475569;
+}
+
+.hero-stats {
+  display: grid;
+  gap: 1rem;
+}
+
+.stat-card {
+  background: #f8fcfb;
+  border-radius: 18px;
+  padding: 1rem 1.2rem;
+}
+
+.stat-card h3 {
+  margin: 0 0 0.5rem;
+  color: #334155;
+}
+
+.stat-card p {
+  margin: 0;
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.panel-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #0f172a;
+}
+
+.button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.85rem 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button-primary {
+  background: #2f8d8d;
+  color: #fff;
+}
+
+.button-secondary {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.soil-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.soil-card {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1rem;
+  border-radius: 18px;
+  background: #f8fcfb;
+}
+
+.soil-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 0.8rem;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+}
+
+.weather-card,
+.irrigation-card,
+.fertilizer-grid,
+.recommendation-grid,
+.challenge-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.weather-card,
+.irrigation-card {
+  padding: 1.3rem;
+  border-radius: 20px;
+  background: #f8fcfb;
+}
+
+.weather-card > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.weather-icon {
+  font-size: 2.5rem;
+}
+
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.weather-details div {
+  padding: 1rem;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.weather-details strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 1.3rem;
+}
+
+.crop-controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.crop-controls label {
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.crop-controls select {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+}
+
+.recommendation-grid,
+.fertilizer-grid,
+.challenge-list {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.recommendation-card,
+.fertilizer-card,
+.challenge-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.2rem;
+  border: 1px solid #e2e8f0;
+}
+
+.recommendation-card h3,
+.fertilizer-card h3,
+.challenge-card h3 {
+  margin: 0 0 0.6rem;
+  color: #334155;
+}
+
+.recommendation-card p,
+.fertilizer-card p,
+.challenge-card p {
+  margin: 0;
+  color: #475569;
+  line-height: 1.7;
+}
+
+.irrigation-card {
+  padding: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.irrigation-card > div {
+  min-width: 0;
+}
+
+.irrigation-card p {
+  margin: 0 0 0.5rem;
+  color: #64748b;
+}
+
+.irrigation-card strong {
+  display: block;
+  font-size: 1.3rem;
+  color: #0f172a;
+}
+
+.meter {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.meter-track {
+  position: relative;
+  height: 0.9rem;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0ea5e9, #10b981);
+}
+
+.footer {
+  text-align: center;
+  margin-top: 1rem;
+  color: #64748b;
+}
+
+@media (max-width: 980px) {
+  .hero-panel {
+    grid-template-columns: 1fr;
+  }
+  .crop-controls {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .weather-details,
+  .crop-controls,
+  .recommendation-grid,
+  .fertilizer-grid,
+  .challenge-list,
+  .irrigation-card {
+    grid-template-columns: 1fr;
+  }
+}
